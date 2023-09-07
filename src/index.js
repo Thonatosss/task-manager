@@ -10,11 +10,11 @@ import { PersistGate } from 'redux-persist/integration/react';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-      {/* <React.StrictMode> */}
+      <React.StrictMode>
       <BrowserRouter basename="/TaskPro"> 
           <App />       
       </BrowserRouter>
-      {/* </React.StrictMode> */}
+      </React.StrictMode>
     </PersistGate>
   </Provider>
 );

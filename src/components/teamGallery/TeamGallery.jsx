@@ -28,6 +28,29 @@ function TeamGallery() {
     <Container>
       <Card>
         <UserPhotoBox>
+          <UserPhoto src={Karen} alt="Ihor Karen" />
+        </UserPhotoBox>
+        <NameBox>
+          <Name>Ihor Karen</Name>
+          <Position>Team Lead [Backend/Frontend]</Position>
+          <Position>Developer [Frontend]</Position>
+        </NameBox>
+        <LinkBox>
+          <Link href="https://github.com/IhorKaren">
+            <IconLink>
+              <use href={icon + '#icon-gitHub'}></use>
+            </IconLink>
+          </Link>
+          <Link href="https://t.me/IhorKaren">
+            <IconLink>
+              <use href={icon + '#icon-telegram'}></use>
+            </IconLink>
+          </Link>
+        </LinkBox>
+      </Card>
+
+      <Card>
+        <UserPhotoBox>
           <UserPhoto src={Pravdiuk} alt="" />
         </UserPhotoBox>
         <NameBox>
@@ -41,29 +64,6 @@ function TeamGallery() {
             </IconLink>
           </Link>
           <Link href="https://t.me/Pravdiuk_Stanislav">
-            <IconLink>
-              <use href={icon + '#icon-telegram'}></use>
-            </IconLink>
-          </Link>
-        </LinkBox>
-      </Card>
-
-      <Card>
-        <UserPhotoBox>
-          <UserPhoto src={Karen} alt="Ihor Karen" />
-        </UserPhotoBox>
-        <NameBox>
-          <Name>Ihor Karen</Name>
-          <Position>Team Lead [Backend]</Position>
-          <Position>Developer [Frontend]</Position>
-        </NameBox>
-        <LinkBox>
-          <Link href="https://github.com/IhorKaren">
-            <IconLink>
-              <use href={icon + '#icon-gitHub'}></use>
-            </IconLink>
-          </Link>
-          <Link href="https://t.me/IhorKaren">
             <IconLink>
               <use href={icon + '#icon-telegram'}></use>
             </IconLink>

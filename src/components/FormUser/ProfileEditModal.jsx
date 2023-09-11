@@ -46,6 +46,7 @@ const ProfileEditModal = ({ user, modalClose }) => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [selectedAvatar, setSelectedAvatar] = useState(user.avatar);
+  const [selectedFile, setSelectedFile] = useState(user.avatar);
 
   const initialValues = {
     avatar: user.avatar || null,
@@ -61,13 +62,9 @@ const ProfileEditModal = ({ user, modalClose }) => {
   const handleFileSelect = event => {
     const file = event.target.files[0];
 
-    if (file.size > 50 * 1024) {
-      toast.error('The file size must not exceed 50 KB');
-      return;
-    }
-
     if (file) {
       const reader = new FileReader();
+      setSelectedFile(file);
 
       reader.onload = () => {
         setSelectedAvatar(reader.result);
@@ -79,13 +76,13 @@ const ProfileEditModal = ({ user, modalClose }) => {
 
   const handleSubmit = async values => {
     try {
-      const newData = {
-        name: values.login,
-        email: values.email,
-        password: values.password,
-        avatar: selectedAvatar,
-      };
-      await dispatch(updateUserProfile(newData)).unwrap();
+      const formData = new FormData();
+      formData.append('name', values.login);
+      formData.append('email', values.email);
+      formData.append('password', values.password);
+      formData.append('avatar', selectedFile);
+
+      await dispatch(updateUserProfile(formData)).unwrap();
 
       toast.success('Saved successfully!!!');
       modalClose();

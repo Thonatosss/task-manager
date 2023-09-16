@@ -5,6 +5,20 @@ const MainModal = ({ modalIsOpen, closeModal, children }) => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
+    const handleKeyDown = e => {
+      if (e.code === 'Escape') {
+        closeModal();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [closeModal]);
+
+  useEffect(() => {
     if (modalIsOpen) {
       setOpen(true);
     } else {

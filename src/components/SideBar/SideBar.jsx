@@ -45,7 +45,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from 'redux/auth/authOperations';
 import { useTheme } from '@mui/material';
 import { selectUser } from 'redux/auth/authSelectors';
-import TeamGallery from 'components/teamGallery/TeamGallery';
+// import TeamGallery from 'components/teamGallery/TeamGallery';
 
 const SideBar = ({ active, onClick }) => {
   const [openAddModal, setOpenAddModal] = useState(false);
@@ -390,41 +390,8 @@ const SideBar = ({ active, onClick }) => {
             paddingLeft: '20px',
           }}
         >
-          <Button
-            onClick={() => setOpenTeamGalleryModal(true)}
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '14px',
-              padding: 0,
-              minWidth: 0,
-              border: 0,
-              '&:hover': {
-                backgroundColor: 'inherit',
-                border: 0,
-              },
-            }}
-          >
-            <Typography
-              sx={{
-                color: 'secondary.dark',
-                fontFamily: 'Poppins',
-                textTransform: 'none',
-                fontWeight: 400,
-                fontSize: '14px',
-                letterSpacing: 0.7,
-              }}
-              variant="body2"
-            >
-              Our Team
-            </Typography>
-          </Button>
-          <MainModal
-            modalIsOpen={openTeamGalleryModal}
-            closeModal={() => setOpenTeamGalleryModal(false)}
-          >
-            <TeamGallery />
-          </MainModal>
+         
+       
         </Box>
 
         <Box

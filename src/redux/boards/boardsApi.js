@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const boardsApi = createApi({
   reducerPath: 'boardsApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://task-pro-covc.onrender.com/',
+    baseUrl: 'https://task-manager-backend-yjxw.onrender.com',
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.token;
 

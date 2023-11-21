@@ -51,7 +51,6 @@ const SideBar = ({ active, onClick }) => {
   const [openAddModal, setOpenAddModal] = useState(false);
   const [openEditModal, setOpenEditModal] = useState(false);
   const [openHelpModal, setOpenHelpModal] = useState(false);
-  const [openTeamGalleryModal, setOpenTeamGalleryModal] = useState(false);
   const [activeBoardTitle, setActiveBoardTitle] = useState('');
   const [activeBoardIcon, setActiveBoardIcon] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
